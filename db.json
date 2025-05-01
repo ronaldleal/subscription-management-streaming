@@ -5,16 +5,6 @@
       "username": "admin",
       "password": "password",
       "subscription": null
-    },
-    {
-      "id": "2",
-      "username": "user",
-      "password": "1234",
-      "subscription": {
-        "id": 1,
-        "name": "Basic",
-        "price": 10
-      }
     }
   ],
   "subscriptions": [
@@ -26,7 +16,8 @@
     {
       "id": "2",
       "name": "Standard",
-      "price": 20
+      "price": 20,
+      "subscription": null
     },
     {
       "id": "3",

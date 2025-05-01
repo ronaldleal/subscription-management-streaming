@@ -2,8 +2,40 @@
   <h2>Elige tu Plan</h2>
   <div *ngFor="let plan of plans" class="plan-card">
     <h3>{{ plan.name }}</h3>
-    <p><strong>Precio:</strong> ${{ plan.price }}</p>
-    <p>{{ plan.description }}</p>
+    <p><strong>Precio Mensual:</strong> ${{ plan.price }}</p>
+    <p><strong>Precio con Descuento:</strong> ${{ getDiscountedPrice(plan) }}</p>
+
+    <label>
+      <input
+        type="radio"
+        name="paymentType-{{ plan.id }}"
+        value="monthly"
+        [(ngModel)]="selectedPaymentTypes[plan.id]"
+      />
+      Mensual
+    </label>
+    <label>
+      <input
+        type="radio"
+        name="paymentType-{{ plan.id }}"
+        value="yearly"
+        [(ngModel)]="selectedPaymentTypes[plan.id]"
+      />
+      Anual (10% de descuento)
+    </label>
+
     <button (click)="subscribeToPlan(plan)">Suscribirse</button>
   </div>
-</div>
+
+  <div class="current-subscription" *ngIf="currentUser?.subscription">
+    <h3>Tu suscripción actual:</h3>
+    <p><strong>Plan:</strong> {{ currentUser.subscription.name }}</p>
+    <p><strong>Precio:</strong> ${{ currentUser.subscription.price }}</p>
+    <button (click)="cancelSubscription()">Cancelar Suscripción</button>
+  </div>
+  
+  <div class="pending-subscription" *ngIf="currentUser?.pendingSubscription">
+    <h3>Tu cambio de suscripción pendiente:</h3>
+    <p><strong>Plan:</strong> {{ currentUser.pendingSubscription.name }}</p>
+    <p><strong>Precio:</strong> ${{ currentUser.pendingSubscription.price }}</p>
+  </div>

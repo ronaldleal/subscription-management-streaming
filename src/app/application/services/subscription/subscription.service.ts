@@ -16,10 +16,14 @@ export class SubscriptionService {
     return this.http.get<SubscriptionDTO[]>(this.apiUrl);  
   }
 
-  cancelSubscription(id: string): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`); 
+  cancelSubscription(userId: number): Observable<any> {
+    const apiUrl = 'http://localhost:3000/users'; // Asegúrate de que apunte a la colección correcta
+    return this.http.patch(`${apiUrl}/${userId}`, { subscription: null });
   }
 
+  updateSubscription(userId: number, subscription: any): Observable<any> {
+    return this.http.patch(`${this.apiUrl}/${userId}`, { subscription }); 
+  }
   subscribeToPlan(plan: any): Observable<any> {
     return this.http.post(this.apiUrl, { planId: plan.id, planName: plan.name, price: plan.price });
   }
@@ -27,5 +31,15 @@ export class SubscriptionService {
   subscribeUser(userId: number, subscription: any): Observable<any> {
     const apiUrl = 'http://localhost:3000/users';
     return this.http.patch(`${apiUrl}/${userId}`, { subscription });
+  }
+
+  calculateDiscountedPrice(subscription: SubscriptionDTO, paymentType: string): number {
+    let discountedPrice = subscription.price;
+  
+    if (paymentType === 'yearly') {
+      discountedPrice = subscription.price * 0.9; // Aplica un 10% de descuento
+    }
+  
+    return discountedPrice;
   }
 }
