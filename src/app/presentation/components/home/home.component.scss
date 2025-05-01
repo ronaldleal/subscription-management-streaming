@@ -1,0 +1,42 @@
+.header-buttons {
+    display: flex;
+    gap: 10px; 
+  
+    .home-button,
+    .plans-button,
+    .logout-button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px; 
+      transition: background-color 0.3s ease;
+  
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  
+    .home-button {
+      background-color: #007bff; 
+      &:hover {
+        background-color: #0056b3; 
+      }
+    }
+  
+    .plans-button {
+      background-color: #007bff; 
+      &:hover {
+        background-color: #0056b3;
+      }
+    }
+  
+    .logout-button {
+      background-color: #dc3545; 
+      &:hover {
+        background-color: #c82333; 
+      }
+    }
+  }

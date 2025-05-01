@@ -1,0 +1,64 @@
+.subscription-management {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+
+  .header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 20px;
+
+    h1 {
+      font-size: 24px;
+      color: #333;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .header-buttons {
+      display: flex;
+      gap: 10px;
+
+      .home-button,
+      .plans-button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+
+      .home-button {
+        background-color: #007bff; 
+        &:hover {
+          background-color: #0056b3; 
+        }
+      }
+      .logout-button {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: #c82333; 
+        }
+      }
+    }
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+}

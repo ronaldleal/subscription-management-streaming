@@ -1,0 +1,9 @@
+<div class="plans-container">
+  <h2>Elige tu Plan</h2>
+  <div *ngFor="let plan of plans" class="plan-card">
+    <h3>{{ plan.name }}</h3>
+    <p><strong>Precio:</strong> ${{ plan.price }}</p>
+    <p>{{ plan.description }}</p>
+    <button (click)="subscribeToPlan(plan)">Suscribirse</button>
+  </div>
+</div>
