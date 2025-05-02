@@ -17,7 +17,7 @@ export class SubscriptionService {
   }
 
   cancelSubscription(userId: number): Observable<any> {
-    const apiUrl = 'http://localhost:3000/users'; // Asegúrate de que apunte a la colección correcta
+    const apiUrl = 'http://localhost:3000/users';
     return this.http.patch(`${apiUrl}/${userId}`, { subscription: null });
   }
 
@@ -37,7 +37,7 @@ export class SubscriptionService {
     let discountedPrice = subscription.price;
   
     if (paymentType === 'yearly') {
-      discountedPrice = subscription.price * 0.9; // Aplica un 10% de descuento
+      discountedPrice = subscription.price * 0.9;
     }
   
     return discountedPrice;

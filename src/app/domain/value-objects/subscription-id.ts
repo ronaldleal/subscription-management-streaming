@@ -10,7 +10,6 @@ export class SubscriptionId {
         if (!value || value.trim().length === 0) {
             throw new Error('Subscription ID cannot be empty.');
         }
-        // Additional validation rules can be added here
     }
 
     public getValue(): string {

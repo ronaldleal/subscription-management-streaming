@@ -11,7 +11,7 @@ export class RegisterComponent {
   username: string = '';
   password: string = '';
 
-  private apiUrl = 'http://localhost:3000/users'; // URL de la colección de usuarios
+  private apiUrl = 'http://localhost:3000/users';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -24,13 +24,13 @@ export class RegisterComponent {
     const newUser = {
       username: this.username,
       password: this.password,
-      subscription: null, // El usuario no tiene suscripción al registrarse
+      subscription: null, 
     };
 
     this.http.post(this.apiUrl, newUser).subscribe(
       (response) => {
         alert('Usuario registrado exitosamente.');
-        this.router.navigate(['/']); // Redirige al home después del registro
+        this.router.navigate(['/']); 
       },
       (error) => {
         console.error('Error al registrar el usuario:', error);
