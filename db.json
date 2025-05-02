@@ -5,6 +5,12 @@
       "username": "admin",
       "password": "password",
       "subscription": null
+    },
+    {
+      "id": "c4c4",
+      "username": "ronald",
+      "password": "123456",
+      "subscription": null
     }
   ],
   "subscriptions": [
@@ -16,8 +22,7 @@
     {
       "id": "2",
       "name": "Standard",
-      "price": 20,
-      "subscription": null
+      "price": 20
     },
     {
       "id": "3",

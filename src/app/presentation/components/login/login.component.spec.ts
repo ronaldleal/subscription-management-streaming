@@ -19,7 +19,7 @@ throw new Error('Method not implemented.');
 
   onLogin(): void {
     if (this.authService.login(this.username, this.password)) {
-      this.router.navigate(['/subscriptions']); 
+      this.router.navigate(['/home']); 
     } else {
       this.errorMessage = 'Invalid username or password';
     }

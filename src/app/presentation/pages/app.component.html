@@ -1,11 +1,16 @@
 <div class="subscription-management">
   <h1>Gestión de Suscripciones</h1>
-  <div class="header-buttons" *ngIf="isLoggedIn()">
-    <button (click)="navigateToHome()" class="home-button">Home</button>
-    <button (click)="navigateToPlans()" class="plans-button">Planes</button>
-    <button (click)="onLogout()" class="logout-button">Logout</button>
+  <div *ngIf="!isLoggedIn()">
+    <app-login></app-login> <!-- Muestra el cuadro de inicio de sesión si no está autenticado -->
   </div>
-  <div class="content">
-    <router-outlet></router-outlet>
+  <div *ngIf="isLoggedIn()">
+    <div class="header-buttons">
+      <button (click)="navigateToHome()" class="home-button">Home</button>
+      <button (click)="navigateToPlans()" class="plans-button">Planes</button>
+      <button (click)="onLogout()" class="logout-button">Logout</button>
+    </div>
+    <div class="content">
+      <router-outlet></router-outlet> <!-- Muestra el contenido principal si está autenticado -->
+    </div>
   </div>
 </div>

@@ -21,7 +21,7 @@ export class LoginComponent {
     this.authService.login(this.username, this.password).subscribe(
       (isAuthenticated: boolean) => {
         if (isAuthenticated) {
-          this.router.navigate(['/subscriptions']);
+          this.router.navigate(['/home']);
         } else {
           this.errorMessage = 'Invalid username or password'; 
         }
@@ -31,5 +31,9 @@ export class LoginComponent {
         this.errorMessage = 'An error occurred. Please try again later.';
       }
     );
+  }
+
+  navigateToRegister(): void {
+    this.router.navigate(['/register']); 
   }
 }

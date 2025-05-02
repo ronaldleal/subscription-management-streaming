@@ -1,27 +1,102 @@
-# SubscriptionManagementStreaming
+# Subscription Management Streaming
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.13.
+Este proyecto es una aplicación de gestión de suscripciones para servicios de streaming. Permite a los usuarios registrarse, iniciar sesión, gestionar sus planes de suscripción, cancelar suscripciones con políticas de reembolso parcial y cambiar de plan con reglas específicas.
 
-## Development server
+## Características
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Registro de Usuarios**: Los usuarios pueden registrarse con un nombre de usuario único y una contraseña.
+- **Inicio de Sesión**: Los usuarios pueden iniciar sesión para acceder a las funcionalidades de la aplicación.
+- **Gestión de Suscripciones**:
+  - Visualización de planes disponibles.
+  - Suscripción a planes con descuentos por pago anual.
+  - Cambio de plan con aplicación al siguiente período.
+  - Cancelación de suscripciones con cálculo de reembolso parcial.
+- **Autenticación**: Control de acceso basado en el estado de inicio de sesión.
+- **Redirección**: Navegación entre las páginas de inicio, planes y suscripciones.
 
-## Code scaffolding
+## Tecnologías Utilizadas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Frontend**: Angular
+- **Backend Simulado**: JSON Server
+- **Estilos**: SCSS
+- **Rutas**: Angular Router
 
-## Build
+## Instalación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona el repositorio:
+   ```bash
+   git clone <URL_DEL_REPOSITORIO>
+   cd subscription-management-streaming
+   ```
 
-## Running unit tests
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Inicia el servidor JSON para simular el backend:
+   ```bash
+   json-server --watch db.json
+   ```
 
-## Running end-to-end tests
+4. Inicia la aplicación Angular:
+   ```bash
+   ng serve
+   ```
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+5. Abre la aplicación en tu navegador:
+   ```
+   http://localhost:4200
+   ```
 
-## Further help
+## Uso
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Registro
+1. Haz clic en "Regístrate aquí" en la página de inicio.
+2. Completa el formulario de registro.
+3. Si el nombre de usuario ya existe, se mostrará un mensaje de error.
+
+### Inicio de Sesión
+1. Ingresa tu nombre de usuario y contraseña en la página de inicio de sesión.
+2. Si las credenciales son correctas, serás redirigido a la página principal.
+
+### Gestión de Suscripciones
+- **Planes Disponibles**: Navega a la página de planes para ver los planes disponibles.
+- **Suscribirse a un Plan**: Selecciona un plan y elige el tipo de pago (mensual o anual).
+- **Cambio de Plan**: Cambia de plan; el cambio se aplicará al siguiente período.
+- **Cancelar Suscripción**: Cancela tu suscripción actual y recibe un reembolso parcial según las políticas.
+
+## Rutas Principales
+
+- `/login`: Página de inicio de sesión.
+- `/register`: Página de registro.
+- `/home`: Página principal después de iniciar sesión.
+- `/plans`: Página para ver y gestionar planes de suscripción.
+- `/subscriptions`: Página para ver las suscripciones activas.
+
+## Políticas de Negocio
+
+1. **Un Usuario por Suscripción Activa**: Un usuario solo puede tener una suscripción activa a la vez.
+2. **Cambio de Plan**: Los cambios de plan se aplican al siguiente período.
+3. **Reembolso Parcial**: Las cancelaciones generan un reembolso parcial basado en el tiempo restante del período.
+
+## Contribución
+
+1. Haz un fork del repositorio.
+2. Crea una rama para tu funcionalidad:
+   ```bash
+   git checkout -b feature/nueva-funcionalidad
+   ```
+3. Realiza tus cambios y haz un commit:
+   ```bash
+   git commit -m "Agrega nueva funcionalidad"
+   ```
+4. Haz un push a tu rama:
+   ```bash
+   git push origin feature/nueva-funcionalidad
+   ```
+5. Abre un Pull Request.
+
+## Licencia
+
+Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.
