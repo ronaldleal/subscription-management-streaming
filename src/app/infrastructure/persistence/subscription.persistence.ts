@@ -1,5 +1,5 @@
-import { SubscriptionEntity } from '@app/subscription-management/domain/entities/subscription.entity';
-import { SubscriptionRepository } from '@app/subscription-management/domain/repositories/subscription.repository';
+import { SubscriptionEntity } from "src/app/domain/entities/subscription.entity";
+import { SubscriptionRepository } from "src/app/domain/repositories/subscription.repository";
 
 
 export class SubscriptionPersistence implements SubscriptionRepository {

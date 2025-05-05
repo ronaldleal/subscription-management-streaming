@@ -1,7 +1,7 @@
 <div class="subscription-management">
   <h1>Gestión de Suscripciones</h1>
   <div *ngIf="!isLoggedIn()">
-    <app-login></app-login> <!-- Muestra el cuadro de inicio de sesión si no está autenticado -->
+    <app-login></app-login>
   </div>
   <div *ngIf="isLoggedIn()">
     <div class="header-buttons">
@@ -10,7 +10,7 @@
       <button (click)="onLogout()" class="logout-button">Logout</button>
     </div>
     <div class="content">
-      <router-outlet></router-outlet> <!-- Muestra el contenido principal si está autenticado -->
+      <router-outlet></router-outlet> 
     </div>
   </div>
 </div>

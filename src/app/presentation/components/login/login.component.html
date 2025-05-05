@@ -13,7 +13,10 @@
         required
         #usernameField="ngModel"
       />
-      <div class="errorMessage" *ngIf="usernameField.invalid && usernameField.touched">
+      <div
+        class="errorMessage"
+        *ngIf="usernameField.invalid && usernameField.touched"
+      >
         El campo usuario es obligatorio.
       </div>
     </div>
@@ -29,19 +32,21 @@
         required
         #passwordField="ngModel"
       />
-      <div class="errorMessage" *ngIf="passwordField.invalid && passwordField.touched">
+      <div
+        class="errorMessage"
+        *ngIf="passwordField.invalid && passwordField.touched"
+      >
         El campo clave es obligatorio.
       </div>
     </div>
 
-    <button type="submit" class="login-button" [disabled]="loginForm.invalid">Acceder</button>
+    <button type="submit" class="login-button" [disabled]="loginForm.invalid">
+      Acceder
+    </button>
 
-    <div class="errorMessage" *ngIf="errorMessage">
-      {{ errorMessage }}
-    </div>
 
     <div class="register-link">
-      <a (click)="navigateToRegister()">Regístrate aquí</a>
+      <button type="button" (click)="navigateToRegister()">Regístrate aquí</button>    
     </div>
   </form>
 </div>

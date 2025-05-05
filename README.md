@@ -23,15 +23,61 @@ Este proyecto es una aplicación de gestión de suscripciones para servicios de 
 
 ## Instalación
 
-1. Clona el repositorio:
+Sigue estos pasos para configurar y ejecutar la aplicación en tu entorno local:
+
+### 1. Clonar el Repositorio
+Clona el repositorio en tu máquina local:
+```bash
+git clone <URL_DEL_REPOSITORIO>
+cd subscription-management-streaming
+```
+
+### 2. Instalar Dependencias
+Instala las dependencias necesarias para el proyecto:
+```bash
+npm install
+```
+
+### 3. Configurar la Base de Datos Simulada
+La aplicación utiliza **JSON Server** como backend simulado. Sigue estos pasos para configurarlo:
+
+1. Asegúrate de tener JSON Server instalado globalmente. Si no lo tienes, instálalo con:
    ```bash
-   git clone <URL_DEL_REPOSITORIO>
-   cd subscription-management-streaming
+   npm install -g json-server
    ```
 
-2. Instala las dependencias:
-   ```bash
-   npm install
+2. En la raíz del proyecto, crea un archivo llamado `db.json` (si no existe) y agrega el siguiente contenido inicial:
+   ```json
+   {
+     "users": [
+       {
+         "id": 1,
+         "username": "admin",
+         "password": "admin123",
+         "subscription": null
+       }
+     ],
+     "subscriptions": [
+       {
+         "id": 1,
+         "name": "Basic",
+         "price": 10,
+         "paymentType": "monthly"
+       },
+       {
+         "id": 2,
+         "name": "Standard",
+         "price": 18,
+         "paymentType": "monthly"
+       },
+       {
+         "id": 3,
+         "name": "Premium",
+         "price": 27,
+         "paymentType": "monthly"
+       }
+     ]
+   }
    ```
 
 3. Inicia el servidor JSON para simular el backend:
@@ -39,15 +85,22 @@ Este proyecto es una aplicación de gestión de suscripciones para servicios de 
    json-server --watch db.json
    ```
 
-4. Inicia la aplicación Angular:
-   ```bash
-   ng serve
-   ```
+   Esto iniciará un servidor en `http://localhost:3000`. Asegúrate de que la aplicación Angular esté configurada para consumir esta URL.
 
-5. Abre la aplicación en tu navegador:
-   ```
-   http://localhost:4200
-   ```
+### 4. Iniciar la Aplicación Angular
+Inicia la aplicación Angular con el siguiente comando:
+```bash
+ng serve
+```
+
+Esto iniciará la aplicación en `http://localhost:4200`.
+
+### 5. Probar la Aplicación
+1. Abre tu navegador y ve a `http://localhost:4200`.
+2. Regístrate como un nuevo usuario o utiliza las credenciales predeterminadas (`admin` / `admin123`) para iniciar sesión.
+3. Explora las funcionalidades de la aplicación, como la gestión de suscripciones.
+
+---
 
 ## Uso
 
@@ -66,6 +119,8 @@ Este proyecto es una aplicación de gestión de suscripciones para servicios de 
 - **Cambio de Plan**: Cambia de plan; el cambio se aplicará al siguiente período.
 - **Cancelar Suscripción**: Cancela tu suscripción actual y recibe un reembolso parcial según las políticas.
 
+---
+
 ## Rutas Principales
 
 - `/login`: Página de inicio de sesión.
@@ -74,11 +129,15 @@ Este proyecto es una aplicación de gestión de suscripciones para servicios de 
 - `/plans`: Página para ver y gestionar planes de suscripción.
 - `/subscriptions`: Página para ver las suscripciones activas.
 
+---
+
 ## Políticas de Negocio
 
 1. **Un Usuario por Suscripción Activa**: Un usuario solo puede tener una suscripción activa a la vez.
 2. **Cambio de Plan**: Los cambios de plan se aplican al siguiente período.
 3. **Reembolso Parcial**: Las cancelaciones generan un reembolso parcial basado en el tiempo restante del período.
+
+---
 
 ## Contribución
 
@@ -96,6 +155,8 @@ Este proyecto es una aplicación de gestión de suscripciones para servicios de 
    git push origin feature/nueva-funcionalidad
    ```
 5. Abre un Pull Request.
+
+---
 
 ## Licencia
 

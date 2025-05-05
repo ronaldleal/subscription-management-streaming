@@ -10,7 +10,13 @@
       "id": "c4c4",
       "username": "ronald",
       "password": "123456",
-      "subscription": null
+      "subscription": {
+        "id": "1",
+        "name": "Basic",
+        "price": 10,
+        "paymentType": "monthly"
+      },
+      "pendingChange": false
     }
   ],
   "subscriptions": [

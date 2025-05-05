@@ -7,6 +7,7 @@ export interface SubscriptionDTO {
     price: number;
     description?: string;
     discount?: number;
-    startDate: string; // Fecha de inicio de la suscripción
+    startDate: string; 
     endDate: string;
+    pendingChange?: boolean;
   }
